@@ -21,7 +21,7 @@ export function Projects() {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://portfolio-backend-1-ar8l.onrender.com';
                 console.log("Fetching from:", apiUrl + '/api/projects');
                 const response = await fetch(`${apiUrl}/api/projects`);
                 if (!response.ok) {
