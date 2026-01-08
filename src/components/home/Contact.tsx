@@ -55,11 +55,11 @@ export function Contact() {
                             <div className="space-y-4 text-left">
                                 <div className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
                                     <h4 className="font-semibold text-indigo-400 mb-1">Email</h4>
-                                    <p className="text-slate-300">hello@example.com</p>
+                                    <p className="text-slate-300">tringuyen.01012002@gmail.com</p>
                                 </div>
                                 <div className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
                                     <h4 className="font-semibold text-cyan-400 mb-1">Location</h4>
-                                    <p className="text-slate-300">San Francisco, CA (Remote)</p>
+                                    <p className="text-slate-300">Da Nang, VN (Remote)</p>
                                 </div>
                             </div>
                         </div>
@@ -100,8 +100,8 @@ export function Contact() {
                                 type="submit"
                                 disabled={status === "loading" || status === "success"}
                                 className={`w-full py-3 rounded-xl font-medium transition-all flex items-center justify-center gap-2 ${status === "success"
-                                        ? "bg-green-600 text-white"
-                                        : "bg-indigo-600 hover:bg-indigo-500 text-white"
+                                    ? "bg-green-600 text-white"
+                                    : "bg-indigo-600 hover:bg-indigo-500 text-white"
                                     }`}
                             >
                                 {status === "loading" ? (

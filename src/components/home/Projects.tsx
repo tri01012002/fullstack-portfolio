@@ -10,6 +10,7 @@ interface Project {
     tags: string[];
     githubUrl: string;
     liveUrl: string;
+    image?: string;
 }
 
 export function Projects() {
@@ -82,11 +83,19 @@ export function Projects() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all group hover:-translate-y-1"
                         >
-                            {/* Image Placeholder */}
+                            {/* Image Placeholder or Actual Image */}
                             <div className="h-48 bg-slate-800/50 w-full relative overflow-hidden group-hover:bg-slate-800 transition-colors flex items-center justify-center">
-                                <div className="text-slate-600 font-bold text-4xl opacity-20 transform group-hover:scale-110 transition-transform duration-500">
-                                    {project.title.charAt(0)}
-                                </div>
+                                {project.image ? (
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                ) : (
+                                    <div className="text-slate-600 font-bold text-4xl opacity-20 transform group-hover:scale-110 transition-transform duration-500">
+                                        {project.title.charAt(0)}
+                                    </div>
+                                )}
                             </div>
 
                             <div className="p-6">

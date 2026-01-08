@@ -64,16 +64,12 @@ export function About() {
                         className="relative"
                     >
                         <div className="absolute inset-0 bg-indigo-500 blur-3xl opacity-20 rounded-full" />
-                        <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-800 flex items-center justify-center">
-                            {/* Placeholder for user image if they have one, otherwise strict code/abstract representation */}
-                            <div className="text-slate-600 font-mono text-sm p-8">
-                                <span className="text-indigo-400">const</span> Pythoneer = {"{"} <br />
-                                &nbsp;&nbsp;name: <span className="text-green-400">"Nguyen Minh Tri"</span>,<br />
-                                &nbsp;&nbsp;skills: [<span className="text-green-400">"Python/C++/Javascript/React/Nextjs/Nodejs"</span>],<br />
-                                &nbsp;&nbsp;hardWorker: <span className="text-cyan-400">true</span>,<br />
-                                &nbsp;&nbsp;Freelancer: <span className="text-cyan-400">true</span><br />
-                                {"}"};
-                            </div>
+                        <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-800">
+                            <img
+                                src="/images/aboutme.jpg"
+                                alt="Nguyen Minh Tri"
+                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            />
                         </div>
                     </motion.div>
                 </div>
