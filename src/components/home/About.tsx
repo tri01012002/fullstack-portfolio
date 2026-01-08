@@ -69,7 +69,7 @@ export function About() {
                             <div className="text-slate-600 font-mono text-sm p-8">
                                 <span className="text-indigo-400">const</span> Pythoneer = {"{"} <br />
                                 &nbsp;&nbsp;name: <span className="text-green-400">"Nguyen Minh Tri"</span>,<br />
-                                &nbsp;&nbsp;skills: [<span className="text-green-400">"Python/C++/Javascript/React/Nextjs/Nodejs"</span>, <span className="text-green-400">"React"</span>],<br />
+                                &nbsp;&nbsp;skills: [<span className="text-green-400">"Python/C++/Javascript/React/Nextjs/Nodejs"</span>],<br />
                                 &nbsp;&nbsp;hardWorker: <span className="text-cyan-400">true</span>,<br />
                                 &nbsp;&nbsp;Freelancer: <span className="text-cyan-400">true</span><br />
                                 {"}"};

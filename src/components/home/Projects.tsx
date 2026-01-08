@@ -1,10 +1,63 @@
 "use client";
-
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
-import projectsData from "@/data/projects.json";
+import { Github, ExternalLink, Loader2, AlertCircle } from "lucide-react";
+
+interface Project {
+    id: number;
+    title: string;
+    description: string;
+    tags: string[];
+    githubUrl: string;
+    liveUrl: string;
+}
 
 export function Projects() {
+    const [projects, setProjects] = useState<Project[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+                console.log("Fetching from:", apiUrl + '/api/projects');
+                const response = await fetch(`${apiUrl}/api/projects`);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch projects: ${response.statusText}`);
+                }
+                const data = await response.json();
+                setProjects(data);
+            } catch (err) {
+                console.error("Error fetching projects:", err);
+                setError("Failed to load projects. Please try again later.");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProjects();
+    }, []);
+
+    if (loading) {
+        return (
+            <section id="projects" className="py-24 bg-slate-900/50 flex justify-center items-center min-h-[400px]">
+                <Loader2 className="w-10 h-10 text-indigo-500 animate-spin" />
+            </section>
+        );
+    }
+
+    if (error) {
+        return (
+            <section id="projects" className="py-24 bg-slate-900/50 flex justify-center items-center min-h-[400px]">
+                <div className="flex flex-col items-center gap-2 text-red-400">
+                    <AlertCircle size={32} />
+                    <p>{error}</p>
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section id="projects" className="py-24 bg-slate-900/50">
             <div className="container mx-auto px-6">
@@ -20,7 +73,7 @@ export function Projects() {
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projectsData.map((project, index) => (
+                    {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 20 }}
