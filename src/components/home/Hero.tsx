@@ -40,10 +40,10 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+                    className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 flex flex-col gap-2"
                 >
-                    AI engineer - Python developer
-                    Currently focused on accessible, human-centered products.
+                    <span>AI engineer - Python developer</span>
+                    <span className="text-slate-500 text-base md:text-lg">Currently focused on accessible, human-centered products.</span>
                 </motion.p>
 
                 <motion.div

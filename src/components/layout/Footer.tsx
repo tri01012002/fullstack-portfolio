@@ -19,13 +19,17 @@ export function Footer() {
 
                 <div className="flex items-center gap-6">
                     <a
-                        href="#"
+                        href="https://github.com/tri01012002"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-slate-400 hover:text-indigo-400 transition-colors transform hover:scale-110"
                     >
                         <Github size={24} />
                     </a>
                     <a
-                        href="#"
+                        href="https://www.linkedin.com/in/tri-nguyen-1b140a357"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-slate-400 hover:text-indigo-400 transition-colors transform hover:scale-110"
                     >
                         <Linkedin size={24} />
