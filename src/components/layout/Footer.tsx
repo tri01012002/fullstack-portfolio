@@ -10,7 +10,7 @@ export function Footer() {
                     </h3>
                     <div className="text-slate-400 text-sm mb-4 space-y-1">
                         <p>Email: tringuyen.01012002@gmail.com</p>
-                        <p>Phone: +84338013315</p>
+                        <p>Phone: +84 338 013 315</p>
                     </div>
                     <p className="text-slate-400 text-sm">
                         © {new Date().getFullYear()} Personal Portfolio. All rights reserved.
