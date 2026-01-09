@@ -17,7 +17,10 @@ export function Contact() {
         setStatus("loading");
 
         try {
-            const res = await fetch("/api/contact", {
+            let apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+            apiUrl = apiUrl.replace(/\/$/, '');
+
+            const res = await fetch(`${apiUrl}/api/contact`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
